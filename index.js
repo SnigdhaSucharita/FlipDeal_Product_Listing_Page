@@ -268,8 +268,8 @@ function filterByRam(product, ram) {
 
 app.get("/products/filter/ram", (req, res) => {
   let ram = parseInt(req.query.ram);
-  let result = products.filter(product => filterByRam(product, ram));
-  res.json(result);
+  let sortedProducts = products.filter(product => filterByRam(product, ram));
+  res.json({ products: sortedProducts });
 })
 
 function filterByRom(product, rom) {
@@ -278,8 +278,8 @@ function filterByRom(product, rom) {
 
 app.get("/products/filter/rom", (req, res) => {
   let rom = parseInt(req.query.rom);
-  let result = products.filter(product => filterByRom(product, rom));
-  res.json(result);
+  let sortedProducts = products.filter(product => filterByRom(product, rom));
+  res.json({ products: sortedProducts});
 })
 
 function filterByBrand(product, brand) {
@@ -288,8 +288,8 @@ function filterByBrand(product, brand) {
 
 app.get("/products/filter/brand", (req, res) => {
   let brand = req.query.brand;
-  let result = products.filter(product => filterByBrand(product, brand));
-  res.json(result);
+  let sortedProducts = products.filter(product => filterByBrand(product, brand));
+  res.json({ products: sortedProducts });
 })
 
 function filterByOs(product, os) {
@@ -298,8 +298,8 @@ function filterByOs(product, os) {
 
 app.get("/products/filter/os", (req, res) => {
   let os = req.query.os;
-  let result = products.filter(product => filterByOs(product, os));
-  res.json(result);
+  let sortedProducts = products.filter(product => filterByOs(product, os));
+  res.json({ products: sortedProducts });
 })
 
 function filterByPrice(product, price) {
@@ -308,8 +308,8 @@ function filterByPrice(product, price) {
 
 app.get("/products/filter/price", (req, res) => {
   let price = parseFloat(req.query.price);
-  let result = products.filter(product => filterByPrice(product, price));
-  res.json(result);
+  let sortedProducts = products.filter(product => filterByPrice(product, price));
+  res.json({ products: sortedProducts });
 })
 
 app.get("/products", (req, res) => {
