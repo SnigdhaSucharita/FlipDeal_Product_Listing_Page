@@ -313,7 +313,8 @@ app.get("/products/filter/price", (req, res) => {
 })
 
 app.get("/products", (req, res) => {
-  res.json(products);
+  let sortedProducts = products;
+  res.json({ products: sortedProducts });
 })
 
 
